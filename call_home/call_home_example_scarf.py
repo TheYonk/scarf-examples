@@ -21,7 +21,7 @@ def read_local_version_file(file_path):
         return None
 
 def main():
-    url = "https://raw.githubusercontent.com/TheYonk/scarf-examples/master/call_home/data/version.json"
+    url = "https://theyonk.gateway.scarf.sh/callhome/version.json"
     file_path = "current_version.json"
 
     version_from_url = get_version_data(url)

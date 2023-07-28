@@ -21,11 +21,13 @@ def read_local_version_file(file_path):
         return None
 
 def main():
-    url = "https://raw.githubusercontent.com/TheYonk/scarf-examples/master/call_home/data/version.json"
+    
     file_path = "current_version.json"
-
-    version_from_url = get_version_data(url)
     version_from_file = read_local_version_file(file_path)
+    
+    url = "https://theyonk.gateway.scarf.sh/callhome/version.json/" + version_from_file
+    version_from_url = get_version_data(url)
+    
 
     if version_from_url is None or version_from_file is None:
         print("Could not fetch version information.")
